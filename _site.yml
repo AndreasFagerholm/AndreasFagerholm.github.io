@@ -1,0 +1,23 @@
+name: "Andreas Fagerholm"
+output_dir: "."
+navbar:
+  title: "Andreas Fagerholm"
+  left:
+    - text: "Research"
+      href: publications.html
+    - text: "Teaching"
+      href: teaching.html
+    - text: "CV"
+      icon: fas fa-file-pdf
+      href: "files/cv.pdf"
+    - text: "Full list of publications"
+      icon: fas fa-file-pdf
+      href: "files/cv.pdf"
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+
+output:
+  html_document:
+    theme: yeti
+    css: 'styles.css'

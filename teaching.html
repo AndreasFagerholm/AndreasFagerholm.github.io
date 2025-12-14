@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
 <title>Teaching etc.</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -43,32 +57,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
@@ -80,13 +70,8 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -100,40 +85,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 45px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h2 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h3 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h4 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h5 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
-.section h6 {
-  padding-top: 50px;
-  margin-top: -50px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -161,7 +122,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -173,7 +134,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -183,11 +144,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -199,13 +177,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -213,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -235,6 +205,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -246,18 +217,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -277,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -294,14 +253,14 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="files/cv.pdf">
-    <span class="fas fa fas fa-file-pdf"></span>
+    <span class="fas fa-file-pdf"></span>
      
     CV
   </a>
 </li>
 <li>
   <a href="files/flp.pdf">
-    <span class="fas fa fas fa-file-pdf"></span>
+    <span class="fas fa-file-pdf"></span>
      
     Full list of publications
   </a>
@@ -319,7 +278,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -328,51 +287,107 @@ $(document).ready(function () {
 </div>
 
 
+<p><br></p>
 <p><br> <br></p>
-<p>Here I will put some miscellaneous material related to teaching and tutoring. The first section includes tutorials and guides on (configurational) research methods while the second and third section gives some elementary information about my course(s) in comparative politics and political theory. (A subheading marked with <img src="images/uk.png"> indicates that the information provided under that subheading is written in English, and a subheading marked with <img src="images/se.png"> that it is written in Swedish.)</p>
+<p>Here I will put some miscellaneous material related to teaching and
+tutoring. The first section includes tutorials and guides on
+(configurational) research methods while the second and third section
+gives some elementary information about my course(s) in comparative
+politics and political theory. (A subheading marked with
+<img src="images/uk.png"> indicates that the information provided under
+that subheading is written in English, and a subheading marked with
+<img src="images/se.png"> that it is written in Swedish.)</p>
 <p><br> <br></p>
 <div id="research-methods-tutorials-and-guides" class="section level3">
-<h3><i class="fas fa-calculator"></i> Research methods: tutorials and guides</h3>
-<div id="ccms-a-bibliography-for-students-and-other-beginners" class="section level5">
-<h5><img src="images/uk.png"> CCMs: A bibliography for students and other beginners</h5>
+<h3><i class="fas fa-calculator"></i> Research methods: tutorials and
+guides</h3>
+<div id="ccms-a-bibliography-for-students-and-other-beginners"
+class="section level5">
+<h5><img src="images/uk.png"> CCMs: A bibliography for students and
+other beginners</h5>
 <ul>
-<li><a href="files/GuidedBibliography.pdf">This document</a> is a guided bibliography of methodological literature on configurational comparative methods (CCMs, or ‘set-theoretic methods’, often simply ‘Qualitative Comparative Analysis’ (QCA)). My intention is to update the document as new publications appear. If there is a publication (book, article, chapter) that you think is missing, please inform me. (I am sure I have missed several important contributions.) You can also contact me if you have more general suggestions on how to improve the bibliography. Just send an e-mail.</li>
+<li><a href="files/GuidedBibliography.pdf">This document</a> is a guided
+bibliography of methodological literature on configurational comparative
+methods (CCMs, or ‘set-theoretic methods’, often simply ‘Qualitative
+Comparative Analysis’ (QCA)). My intention is to update the document as
+new publications appear. If there is a publication (book, article,
+chapter) that you think is missing, please inform me. (I am sure I have
+missed several important contributions.) You can also contact me if you
+have more general suggestions on how to improve the bibliography. Just
+send an e-mail.</li>
 </ul>
 </div>
 <div id="konfigurativa-metoder-en-introduktion" class="section level5">
-<h5><img src="images/se.png"> Konfigurativa metoder: En introduktion</h5>
+<h5><img src="images/se.png"> Konfigurativa metoder: En
+introduktion</h5>
 <ul>
-<li><a href="files/untitled-1.pdf">Detta (halvfärdiga) dokument</a> innehåller en kort svenskspråkig introduktion till de konfigurativa metoderna. Tanken är att dokumentet i framtiden ska bestå av två delar där den första behandlar de konfigurativa metodernas grundkomponenter medan den andra delen erbjuder en stegvis guide för studenter som är intresserade av att använda konfigurativ metod i sitt uppsatsskrivande (t.ex. i kandidatuppsatser och/eller i avhandling pro gradu). Den nuvarande versionen innehåller endast del 1, där tre centrala inslag i forskning med konfigurativa metoder introduceras – de Booleska operatorerna <strong>OCH</strong>, <strong>ELLER</strong> och <strong>ICKE</strong>, begreppen <strong>nödvändighet och tillräcklighet</strong> samt fenomenet <strong>kausal komplexitet</strong>.</li>
+<li><a href="files/untitled-1.pdf">Detta (halvfärdiga) dokument</a>
+innehåller en kort svenskspråkig introduktion till de konfigurativa
+metoderna. Tanken är att dokumentet i framtiden ska bestå av två delar
+där den första behandlar de konfigurativa metodernas grundkomponenter
+medan den andra delen erbjuder en stegvis guide för studenter som är
+intresserade av att använda konfigurativ metod i sitt uppsatsskrivande
+(t.ex. i kandidatuppsatser och/eller i avhandling pro gradu). Den
+nuvarande versionen innehåller endast del 1, där tre centrala inslag i
+forskning med konfigurativa metoder introduceras – de Booleska
+operatorerna <strong>OCH</strong>, <strong>ELLER</strong> och
+<strong>ICKE</strong>, begreppen <strong>nödvändighet och
+tillräcklighet</strong> samt fenomenet <strong>kausal
+komplexitet</strong>.</li>
 </ul>
 <p><br> <br></p>
 </div>
 </div>
 <div id="research-methods-current-courses" class="section level3">
-<h3><i class="fas fa-calculator"></i> Research methods: current courses</h3>
-<div id="introduktion-till-statistik-for-statsvetare-gemensamma-studier-5-sp-tillsammans-med-johanna-holm" class="section level5">
-<h5><img src="images/se.png"> Introduktion till statistik för statsvetare (gemensamma studier, 5 sp, tillsammans med Johanna Holm)</h5>
+<h3><i class="fas fa-calculator"></i> Research methods: current
+courses</h3>
+<div
+id="introduktion-till-statistik-för-statsvetare-gemensamma-studier-5-sp-tillsammans-med-johanna-holm"
+class="section level5">
+<h5><img src="images/se.png"> Introduktion till statistik för
+statsvetare (gemensamma studier, 5 sp, tillsammans med Johanna
+Holm)</h5>
 <ul>
-<li>Information om kursen finns i <a href="https://studiehandboken.abo.fi/sv/kurs/SM00CB82/16330?period=2020-2022">studiehandboken</a>.</li>
+<li>Information om kursen finns i <a
+href="https://studiehandboken.abo.fi/sv/kurs/SM00CB82/16330?period=2020-2022">studiehandboken</a>.</li>
 </ul>
 <p><br> <br></p>
 </div>
 </div>
 <div id="comparative-politics-current-courses" class="section level3">
-<h3><i class="fas fa-globe"></i> Comparative politics: current courses</h3>
-<div id="europeiska-partier-och-partisystem-fordjupade-studier-5-sp" class="section level5">
-<h5><img src="images/se.png"> Europeiska partier och partisystem (fördjupade studier, 5 sp)</h5>
+<h3><i class="fas fa-globe"></i> Comparative politics: current
+courses</h3>
+<div id="europeiska-partier-och-partisystem-fördjupade-studier-5-sp"
+class="section level5">
+<h5><img src="images/se.png"> Europeiska partier och partisystem
+(fördjupade studier, 5 sp)</h5>
 <ul>
-<li>Kursen syftar till att utgöra en fördjupning inom studiet av partier och partisystem. Efter godkänd kurs förväntas studenten (a) förstå centrala begrepp inom forskningen kring politiska partier och partisystem; (b) kunna redogöra för de olika teoribildningar och de empiriska forskningsbidrag som härvidlag är aktuella och (c) tillämpa och använda sig av den förvärvade kunskapen i självständigt genomförda analyser. <br><br> Ytterligare information om kursen finns i <a href="https://studiehandboken.abo.fi/sv/kurs/SM00CB88/16336">studiehandboken</a>. Vidare instruktioner fås genom att besöka kursens <a href="https://moodle.abo.fi/course/view.php?id=6232">moodle-sida</a> (kräver inloggning) eller genom att kontakta mig.</li>
+<li>Kursen syftar till att utgöra en fördjupning inom studiet av partier
+och partisystem. Efter godkänd kurs förväntas studenten (a) förstå
+centrala begrepp inom forskningen kring politiska partier och
+partisystem; (b) kunna redogöra för de olika teoribildningar och de
+empiriska forskningsbidrag som härvidlag är aktuella och (c) tillämpa
+och använda sig av den förvärvade kunskapen i självständigt genomförda
+analyser. <br><br> Ytterligare information om kursen finns i <a
+href="https://studiehandboken.abo.fi/sv/kurs/SM00CB88/16336">studiehandboken</a>.
+Vidare instruktioner fås genom att besöka kursens <a
+href="https://moodle.abo.fi/course/view.php?id=6232">moodle-sida</a>
+(kräver inloggning) eller genom att kontakta mig.</li>
 </ul>
 <p><br> <br></p>
 </div>
 </div>
 <div id="political-theory-current-courses" class="section level3">
-<h3><i class="fas fa-university"></i> Political theory: current courses</h3>
-<div id="perspektiv-pa-politik-amnesstudier-5-sp-tillsammans-med-tom-carlson" class="section level5">
-<h5><img src="images/se.png"> Perspektiv på politik (ämnesstudier, 5 sp, tillsammans med Tom Carlson)</h5>
+<h3><i class="fas fa-university"></i> Political theory: current
+courses</h3>
+<div
+id="perspektiv-på-politik-ämnesstudier-5-sp-tillsammans-med-tom-carlson"
+class="section level5">
+<h5><img src="images/se.png"> Perspektiv på politik (ämnesstudier, 5 sp,
+tillsammans med Tom Carlson)</h5>
 <ul>
-<li>Information om kursen finns i <a href="https://studiehandboken.abo.fi/sv/kurs/SM00CC48/16533">studiehandboken</a>.</li>
+<li>Information om kursen finns i <a
+href="https://studiehandboken.abo.fi/sv/kurs/SM00CC48/16533">studiehandboken</a>.</li>
 </ul>
 </div>
 </div>
@@ -391,7 +406,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -399,6 +414,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

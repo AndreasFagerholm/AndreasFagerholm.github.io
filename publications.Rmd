@@ -1,0 +1,67 @@
+<style>
+.blue-color {
+color:blue;
+}
+.green-color {
+color:green;
+}
+.teal-color {
+color:teal;
+}
+.yellow-color {
+color:yellow;
+}
+.red-color {
+color:red;
+}
+</style>
+
+<br>
+
+---
+title: "Selected publications"
+---
+
+<br>
+<br>
+
+Below is a list of ten (10) selected recent and forthcoming (2020--2024) peer-reviewed (<i class="fa fa-file-o green-color"></i>) and non-peer-reviewed (<i class="fa fa-file-o red-color"></i>) publications.
+
+<br>
+<br>
+
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2024): [Far left and far right party reactions to Russia’s invasion of Ukraine.](https://www.tandfonline.com/doi/full/10.1080/01402382.2024.2335455) <u>*West European Politics*</u>, advance online publication. <br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Berg J, Fagerholm A, Strandberg K** (2024): 
+[Quality User-Generated Content? A Case Study of the Quality of Online News Comments on the Site of Finnish Public Service Broadcaster Yle](https://www.tandfonline.com/doi/full/10.1080/17512786.2024.2329759). <u>*Journalism Practice*</u>, advance online publication.<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2024): [Sympathy or Criticism? The European Far Left and Far Right React to Russia’s 2022 Invasion of Ukraine.](https://www.tandfonline.com/doi/full/10.1080/09668136.2024.2347850) <u>*Europe-Asia Studies*</u> 76:6, pp. 829--850.<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2023): 
+[Finland.](https://link.springer.com/chapter/10.1057/978-1-137-56264-7_7) In *Palgrave Handbook of the Radical Left*, eds Fabien Escalona, Daniel Keith & Luke March. London: <u>Palgrave Macmillan</u>, pp. 173--199. <br>
+<br>
+
+<i class="fa fa-file-o red-color"></i> **Fagerholm A** (2022):
+[Nya ytterhögerpartier i Finland (2000--2022): En översikt.](https://doi.org/10.37452/politiikka.117042) <u>*Politiikka*</u> 64:3, pp. 283--295.<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2022): 
+[Lokala listor i finländska kommunalval](https://doi.org/10.37452/politiikka.98492). <u>*Politiikka*</u> 64:1, pp. 32--58.<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2021): 
+[How do they get in? Radical parties and government participation in European democracies](https://www.cambridge.org/core/journals/government-and-opposition/article/how-do-they-get-in-radical-parties-and-government-participation-in-european-democracies/3BF81097FCF4CD9BD58C395863B68E0D). <u>*Government and Opposition*</u> 56:2, pp. 260--280. <br>(data: [<i class="fa fa-file-excel-o"></i>](files/FullDataGO.csv); verification: <i class="fa fa-file-pdf-o"></i>; errata: [<i class="fa fa-file-pdf-o"></i>](files/errata_t4.pdf))<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2020): 
+[Radical (and populist) parties in European governments: How do they get in?](https://brill.com/view/journals/popu/3/1/article-p29_3.xml#affiliation0) <u>*Populism*</u> 3:1, pp. 29--64. <br>(data: [<i class="fa fa-file-excel-o"></i>](files/FullDataGO.csv); verification: <i class="fa fa-file-pdf-o"></i>)<br>
+<br>
+
+<i class="fa fa-file-o green-color"></i> **Fagerholm A** (2020): 
+Belastning eller tillgång? En kartläggning av riksdagsdebatten kring medborgarinitiativet om frivillig skolsvenska. In [*Ur majoritetens perspektiv: Opinionen om det svenska i Finland*](https://www.sls.fi/sites/default/files/publications/pdf/2668.pdf), eds Staffan Himmelroos & Kim Strandberg. Helsinki: <u>Svenska litteratursällskapet i Finland</u>, pp. 166--191.<br> 
+<br>
+

@@ -1,0 +1,51 @@
+<br>
+
+---
+title: "Welcome to my website"
+---
+
+<br>
+<br>
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+My name is Andreas (Jon Ingmar) Fagerholm and I am a researcher in political science (comparative politics).
+
+My current research is mainly focused on political parties (as actors in elections, legislatures and governments). I am also interested in political methodology (qualitative, quantitative and mixed methods) and in the history and philosophy of political science.
+
+My hobbies include, in no particular order, travelling, groundhopping, hiking, nature & fishing, cooking & food, science, history, militaria, and railways & trainspotting (esp. tram and rapid transit systems).
+
+I do not use social media (Twitter, Facebook, LinkedIn etc.). If you want to contact me, send an e-mail.
+
+<br>
+
+<center>
+<i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i>
+</center>
+
+<br>
+
+I am also obsessed with making lists, so here is one of my three most recently read books:
+<br>
+<br>
+
+<i class="fas fa-book"></i> **Linna, Väinö**:<br>
+*Täällä pohjantähden alla 3* (WSOY, 1962; re-reading) <br>
+<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+<br> --- Novel.
+<br>
+<br>
+
+<i class="fas fa-book"></i> **Salminen, Esko**:<br>
+*Suomettumisen uusin aalto* (Minerva, 2011) <br>
+<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+<br> --- Press history.
+<br>
+<br>
+
+<i class="fas fa-book"></i> **Salminen, Esko**:<br> 
+*Vaikeneva valtiomahti?* (Edita, 1996)<br>
+<i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+<br> --- Press history.
+<br>
+<br>
